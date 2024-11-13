@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { MapPin, Bed, Bath, Calendar, Home } from "lucide-react";
-import Link from "next/link";
 import PropertyCard from "@/components/PropertyCard";
+import MainNav from "@/components/MainNav";
+import Footer from "@/components/Footer";
 
 // Property Card Component (for listings)
 <PropertyCard
@@ -77,10 +78,10 @@ const PropertyDetailPage = () => {
 
   const images = [
     "/property1.png",
-    "/property1.png",
-    "/property1.png",
-    "/property1.png",
-    "/property1.png",
+    "/property2.png",
+    "/property3.png",
+    "/property4.png",
+    "/property5.png",
     "/property1.png",
   ];
 
@@ -99,33 +100,10 @@ const PropertyDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="bg-black text-white">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">
-            LOGOPSUM
-          </Link>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-gray-300">
-              Nav Link
-            </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Nav Link
-            </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Nav Link
-            </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Nav Link
-            </Link>
-          </div>
-          <button className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600">
-            Work with us →
-          </button>
-        </div>
-      </nav>
+      <MainNav />
 
       {/* Property Header */}
-      <div className="bg-black text-white py-4">
+      <div className="bg-black text-white pt-24 pb-8">
         <div className="container mx-auto px-4">
           <h1 className="text-2xl font-bold">Modern House</h1>
           <div className="flex items-center gap-2 text-gray-300">
@@ -216,7 +194,7 @@ const PropertyDetailPage = () => {
             <ContactForm
               agent={{
                 name: "Kayley Hall",
-                image: "/api/placeholder/40/40",
+                image: "/Oval.png",
               }}
             />
           </div>
@@ -244,57 +222,7 @@ const PropertyDetailPage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black text-white mt-16 py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold">
-              Make your dreams a{" "}
-              <span className="text-orange-500">reality</span>
-            </h2>
-            <button className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600">
-              Work with us →
-            </button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <img src="/api/placeholder/120/40" alt="Logo" className="mb-4" />
-              <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Facebook
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Twitter
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Instagram
-                </a>
-              </div>
-            </div>
-            {[1, 2, 3].map((i) => (
-              <div key={i}>
-                <h3 className="font-bold mb-4">Column Heading</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#" className="text-gray-400 hover:text-white">
-                      Link goes here
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-400 hover:text-white">
-                      Link goes here
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-400 hover:text-white">
-                      Link goes here
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

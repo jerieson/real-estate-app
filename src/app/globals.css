@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 /* 
 @media (prefers-color-scheme: dark) {
@@ -15,31 +15,31 @@
 } */
 
 body {
-	color: var(--foreground);
-	background: var(--background);
-	font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "DM Sans", sans-serif;
 }
 
 @layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 .scrollbar-hide {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .scrollbar-hide::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .animate-section {
-	transform: translateY(2rem);
-	opacity: 0;
+  transform: translateY(2rem);
+  opacity: 0;
 }
 
 .animate-in {
-	transform: translateY(0) !important;
-	opacity: 1 !important;
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }

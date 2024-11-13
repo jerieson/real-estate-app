@@ -1,7 +1,7 @@
 // src/app/api/users/[id]/route.ts
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import { Roles, isValidRole } from "@/types";
 

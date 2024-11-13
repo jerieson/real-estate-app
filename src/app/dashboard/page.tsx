@@ -1,7 +1,7 @@
 // src/app/dashboard/page.tsx
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { prisma } from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import UserList from "./UserList";
 // import PropertyList from "./PropertyList";

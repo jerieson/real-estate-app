@@ -29,7 +29,9 @@ const MainNav = () => {
       } transition-colors duration-300`}
     >
       <div className="container mx-auto px-4 py-8 flex justify-between items-center text-white">
-        <Image width={128} height={34} src="/logo.svg" alt="logo" />
+        <Link href="/">
+          <Image width={128} height={34} src="/logo.svg" alt="logo" />
+        </Link>
         <div className="flex items-center gap-14">
           <Link href="#" className="hover:text-gray-300">
             Properties
