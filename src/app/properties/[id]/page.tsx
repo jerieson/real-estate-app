@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { MapPin, Bed, Bath, Calendar, Home } from "lucide-react";
 import Link from "next/link";
-import { Property } from "@/types";
 import PropertyCard from "@/components/PropertyCard";
 
 // Property Card Component (for listings)

@@ -2,15 +2,7 @@ import Link from "next/link";
 import { Bath, Bed, Home } from "lucide-react";
 import { Property } from "@/types";
 
-const PropertyCard = ({
-  id,
-  title,
-  bedrooms,
-  bathrooms,
-  area,
-  images,
-  price,
-}: Property) => (
+const PropertyCard = ({ id, title, bedrooms, bathrooms, area }: Property) => (
   <Link href={`/properties/${id}`} className="block">
     <div className="bg-white rounded-[25px] shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <div className="relative h-48">
