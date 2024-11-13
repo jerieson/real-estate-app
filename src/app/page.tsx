@@ -1,101 +1,199 @@
+"use client";
+import React, { useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import MobileNavigation from "@/components/MobileNavigation";
+import Testimonials from "@/components/Testimonials";
+import Hero from "@/components/Hero";
+import Marketing from "@/components/Marketing";
+import SearchForm from "@/components/SearchForm";
+import PropertyCard from "@/components/PropertyCard";
+import FeatureSection from "@/components/FeatureSection";
+import Footer from "@/components/Footer";
+import StaggeredCards from "@/components/StaggeredCards";
+import MainNav from "@/components/MainNav";
 
-export default function Home() {
+// Hero Section Component
+<Hero />;
+
+// Marketing Component
+<Marketing
+  isReverse={false}
+  imageUrl={""}
+  title={""}
+  description={""}
+  url={""}
+/>;
+
+// Search Form Component
+<SearchForm />;
+
+// Updated Property Card Component
+<PropertyCard
+  id={undefined}
+  title={undefined}
+  price={undefined}
+  image={undefined}
+  beds={undefined}
+  baths={undefined}
+  sqft={undefined}
+/>;
+
+// Feature Section Component
+<>
+  <FeatureSection title={""} description={""} />
+  <Testimonials />
+</>;
+
+// Footer Component
+<Footer />;
+
+const AnimatedSection = ({ children, className = "" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true, // Animation triggers only once
+    amount: 0.3, // Trigger when 30% of element is in view
+  });
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 75 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 75 }}
+      transition={{
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+<StaggeredCards properties={undefined} />;
+
+// Main Page Component
+const HomePage = () => {
+  // Sample property data
+  const properties = [
+    {
+      id: 1,
+      title: "Modern House",
+      price: 450000,
+      beds: 4,
+      baths: 2,
+      sqft: 2000,
+      image: "/api/placeholder/400/300",
+    },
+    {
+      id: 2,
+      title: "Luxury Villa",
+      price: 650000,
+      beds: 5,
+      baths: 3,
+      sqft: 3000,
+      image: "/api/placeholder/400/300",
+    },
+    {
+      id: 3,
+      title: "Cozy Apartment",
+      price: 320000,
+      beds: 3,
+      baths: 2,
+      sqft: 1500,
+      image: "/api/placeholder/400/300",
+    },
+    {
+      id: 4,
+      title: "Family Home",
+      price: 550000,
+      beds: 4,
+      baths: 3,
+      sqft: 2500,
+      image: "/api/placeholder/400/300",
+    },
+    {
+      id: 5,
+      title: "Beach House",
+      price: 750000,
+      beds: 5,
+      baths: 4,
+      sqft: 3500,
+      image: "/api/placeholder/400/300",
+    },
+    {
+      id: 6,
+      title: "Mountain Retreat",
+      price: 480000,
+      beds: 3,
+      baths: 2,
+      sqft: 2200,
+      image: "/api/placeholder/400/300",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Show MobileNavigation on small screens and MainNav on md: and larger */}
+      <div className="block md:hidden">
+        <MobileNavigation />
+      </div>
+      <div className="hidden md:block">
+        <MainNav />
+      </div>
+
+      <Hero />
+      <AnimatedSection>
+        <Marketing
+          isReverse={false}
+          imageUrl="/marketing1.png"
+          title="You're in good hands"
+          description="Torquatos nostros? quos dolores eos, qui dolorem ipsum per se texit, ne ferae quidem se repellere, idque instituit docere sic: omne animal, simul atque integre iudicante itaque aiunt hanc quasi involuta aperiri, altera occulta quaedam et voluptatem accusantium doloremque."
+          url="/"
+        />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <SearchForm />
+      </AnimatedSection>
+
+      <div className="container mx-auto px-4 pt-16">
+        <AnimatedSection>
+          <h2 className="text-3xl font-bold mb-8">
+            Find your next place to live
+          </h2>
+        </AnimatedSection>
+        <StaggeredCards properties={properties} />
+      </div>
+
+      <AnimatedSection>
+        <Marketing
+          isReverse={true}
+          imageUrl="/marketing2.png"
+          title="You're in good hands"
+          description="Torquatos nostros? quos dolores eos, qui dolorem ipsum per se texit, ne ferae quidem se repellere, idque instituit docere sic: omne animal, simul atque integre iudicante itaque aiunt hanc quasi involuta aperiri, altera occulta quaedam et voluptatem accusantium doloremque."
+          url="/"
+        />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <FeatureSection
+          title="You're in good hands"
+          description="Torquatos nostros? quos dolores eos, qui dolorem ipsum per se texit, ne ferae quidem se repellere, idque instituit docere sic: omne animal, simul atque integre iudicante itaque aiunt hanc quasi involuta aperiri, altera occulta quaedam et voluptatem accusantium doloremque."
+        />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Testimonials />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Footer />
+      </AnimatedSection>
     </div>
   );
-}
+};
+
+export default HomePage;
