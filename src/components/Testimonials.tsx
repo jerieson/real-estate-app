@@ -52,11 +52,10 @@ const Testimonials: React.FC<TestimonialProps> = ({
     const checkMobile = (): void => {
       setIsMobile(window.innerWidth < 768);
     };
-    console.log(isMobile);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  }, [isMobile]);
 
   const handleDragStart = (e: MouseEvent | Touch): void => {
     setIsDragging(true);
