@@ -22,7 +22,7 @@ export async function GET() {
     return NextResponse.json(properties);
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to fetch properties" },
+      { error: `Failed to fetch properties ${error}` },
       { status: 500 }
     );
   }
@@ -80,7 +80,7 @@ export async function POST(request: Request) {
     return NextResponse.json(property);
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to create property" },
+      { error: `Failed to create property ${error}` },
       { status: 500 }
     );
   }

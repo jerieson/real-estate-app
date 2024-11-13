@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import UserList from "./UserList";
-import PropertyList from "./PropertyList";
+// import PropertyList from "./PropertyList";
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions);

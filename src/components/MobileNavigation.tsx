@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   MenuIcon,
   X,
-  Search,
   Home,
   Building,
   Phone,

@@ -1,7 +1,5 @@
 "use client";
 import React, { useRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import MobileNavigation from "@/components/MobileNavigation";
 import Testimonials from "@/components/Testimonials";

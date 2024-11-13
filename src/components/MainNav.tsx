@@ -16,6 +16,8 @@ const MainNav = () => {
       setIsScrolled(window.scrollY > 50); // Change the value as needed
     };
 
+    console.log(scrollY);
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
