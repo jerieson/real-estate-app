@@ -35,14 +35,6 @@ const PropertyCard = ({
             <Home size={16} className="mr-2" /> {area}
           </div>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-orange-500 font-bold">
-            ${price.toLocaleString()}
-          </span>
-          <span className="text-sm text-gray-500">
-            ${(price / area).toFixed(2)}/sq.ft
-          </span>
-        </div>
       </div>
     </div>
   </Link>

@@ -77,12 +77,12 @@ const PropertyDetailPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   const images = [
-    "/api/placeholder/800/600",
-    "/api/placeholder/800/600",
-    "/api/placeholder/800/600",
-    "/api/placeholder/800/600",
-    "/api/placeholder/800/600",
-    "/api/placeholder/800/600",
+    "/property1.png",
+    "/property1.png",
+    "/property1.png",
+    "/property1.png",
+    "/property1.png",
+    "/property1.png",
   ];
 
   const features = [
@@ -232,9 +232,9 @@ const PropertyDetailPage = () => {
                 key={id}
                 id={id}
                 title="Malto House"
-                beds={4}
-                baths={2}
-                sqft={2000}
+                bedrooms={4}
+                bathrooms={2}
+                area={2000}
                 year={2007}
                 price={450000}
                 image="/api/placeholder/400/300"
